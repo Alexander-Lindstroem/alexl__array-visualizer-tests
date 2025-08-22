@@ -1,6 +1,18 @@
 import { fireEvent, screen, render, getAllByTestId } from "@testing-library/react";
 import ArrayVisualizer from "@/components/ArrayVisualizer";
-import { dummyArray } from "@/data/data";
+
+type ArrayItemTypes = {
+    color: string,
+    shape: "square" | "circle" | "star" | "triangle",
+    value: number
+}
+
+const dummyArray:ArrayItemTypes[] = [
+    {color: "red", shape: "square", value: 1},
+    {color: "blue", shape: "circle", value: 2},
+    {color: "yellow", shape: "star", value: 3},
+    {color: "green", shape: "triangle", value: 4},
+]
 
 describe("unit tests for ArrayVisualizer component", () => {
     test("that the visualizerContainer element exists", () => {

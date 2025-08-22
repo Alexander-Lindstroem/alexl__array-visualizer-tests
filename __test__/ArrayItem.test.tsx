@@ -1,6 +1,14 @@
 import {render, screen} from "@testing-library/react"
 import ArrayItem from "@/components/ArrayItem"
 
+type ShapeNameTypes = "circle" | "square" | "star" | "triangle"
+
+type ArrayItemTypes = {
+    color: string,
+    shape: ShapeNameTypes,
+    value: number
+}
+
 describe("unit tests for the ArrayItem component", () => {
     test("that the container for the component is rendered", () => {
         const mockItem:ArrayItemTypes = {
